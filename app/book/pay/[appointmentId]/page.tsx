@@ -15,7 +15,6 @@ import { supabase } from '@/lib/supabase';
 import {
   type CurrencyCode,
   CURRENCIES,
-  PAYPAL_CURRENCIES,
   convertFromUSD,
   formatAmount,
   toStripeAmount,

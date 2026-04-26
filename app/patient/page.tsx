@@ -427,7 +427,8 @@ export default function PatientDashboardPage() {
 
 function convertTo24h(timeStr: string) {
   const [time, modifier] = timeStr.split(" ");
-  let [hours, minutes] = time.split(":");
+  let [hours] = time.split(":");
+  const [, minutes] = time.split(":");
   if (modifier === "PM" && hours !== "12") hours = String(parseInt(hours) + 12);
   if (modifier === "AM" && hours === "12") hours = "00";
   return `${hours.padStart(2, "0")}:${minutes}:00`;
