@@ -230,7 +230,7 @@ export async function sendMeetingNotification(
   doctorEmail: string,
 ): Promise<void> {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-  const isVideo = appt.mode === 'Video' && meeting;
+  const isVideo = appt.mode === 'Video' && meeting !== null;
 
   const patientHtml = buildMeetingEmail({ recipientName: appt.patientName, forDoctor: false, appt, meeting, appUrl, isVideo });
   const doctorHtml = buildMeetingEmail({ recipientName: 'Doctor', forDoctor: true, appt, meeting, appUrl, isVideo });
